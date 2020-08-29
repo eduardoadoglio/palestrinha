@@ -10,7 +10,9 @@ window.onload = function () {
   submit.onclick = function () {
     let value = usernameInput.value;
     chrome.storage.sync.set({ username: value }, function () {});
-    ping(value);
+    if (value != "") {
+      ping(value);
+    }
   };
 };
 
