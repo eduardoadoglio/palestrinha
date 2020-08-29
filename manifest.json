@@ -1,14 +1,13 @@
 {
   "name": "Palestrinha",
   "version": "1.0",
-  "description": "Silencia as mensagens daquela pessoa insuportável no google meets",
+  "description": "Silencia as mensagens daquela pessoa insuportável no google meet",
   "author": "Adoglio",
   "permissions": ["storage", "activeTab", "declarativeContent"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   },
-  "options_page": "options.html",
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {
