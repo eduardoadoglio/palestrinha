@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      textarea:focus,
+      input:focus {
+        outline: none;
+      }
+      body {
+        width: 300px;
+      }
+      .form-box {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+      }
+      .header {
+        text-align: center;
+      }
+      .title {
+        font-family: "Century Gothic";
+        font-weight: lighter;
+        color: #ff302b;
+        margin-bottom: 0;
+        font-size: 30px;
+      }
+      .subtitle {
+        color: #807c7c;
+        font-family: "Century Gothic";
+        font-weight: lighter;
+        font-size: 15px;
+        margin-top: 0;
+      }
+      .user-input {
+        width: 90%;
+        height: 25px;
+        border: rgba(0, 0, 0, 0.3) 0.1px solid;
+        margin-bottom: 20px;
+        padding: 0px 10px;
+      }
+      .submit-button {
+        background-color: #ff302b !important;
+        color: white;
+        border: none;
+        width: 75%;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <script src="popup.js"></script>
+  <body>
+    <div class="form-box">
+      <div class="header">
+        <h1 class="title">PALESTRINHA</h1>
+        <h2 class="subtitle">
+          ninguem te aguenta mais maluco pelo amor de deus
+        </h2>
+      </div>
+      <span>Fala o nome do meliante</span>
+      <span id="silenciado"></span>
+      <input type="text" id="usernameInput" class="user-input" />
+      <button id="submitUsername" class="submit-button">
+        silencia esse imundo.
+      </button>
+    </div>
+  </body>
+</html>
