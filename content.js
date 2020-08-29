@@ -1,12 +1,20 @@
-palestrinhaName = "";
+let palestrinhaName = "";
+let palestrinhaMessage;
 
 $(document).ready(function () {
-  $(".l4V7wb.Fxmcue").on("click", function () {
-    $('.GDhqjd[data-sender-name="' + username + '"]').addClass(
-      "palestrinha-message"
-    );
+  $("body").on("click", ".l4V7wb.Fxmcue", function () {
+    removePalestrinhaMessages();
   });
 });
+
+var removePalestrinhaMessages = function () {
+  palestrinhaMessage = $('.GDhqjd[data-sender-name="' + palestrinhaName + '"]');
+  if (!palestrinhaMessage.length) {
+    window.setTimeout(removePalestrinhaMessages, 100);
+    return;
+  }
+  palestrinhaMessage.addClass("palestrinha-message");
+};
 
 function addObserverIfDesiredNodeAvailable() {
   let targetNode = $(".z38b6.CnDs7d.hPqowe").get(0);
@@ -31,21 +39,10 @@ function addObserverIfDesiredNodeAvailable() {
 
 addObserverIfDesiredNodeAvailable();
 
-var removePalestrinha = function (username) {
-  $('.GDhqjd[data-sender-name="' + username + '"]').addClass(
-    "palestrinha-message"
-  );
-};
-
-var addListeners = function (username) {
+var addListeners = function () {
   $(
     "<style> .palestrinha-message { display:none !important; } </style>"
   ).appendTo("head");
-  removePalestrinha(username);
-
-  $(window).scroll(function () {
-    removePalestrinha(username);
-  });
 };
 
 var removeListeners = function () {
@@ -61,7 +58,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   chrome.storage.sync.get("username", function (data) {
     if (data.username != "" && request.command === "init") {
       palestrinhaName = data.username;
-      addListeners(data.username);
+      addListeners();
     }
   });
   sendResponse({ result: "success" });
