@@ -1,7 +1,7 @@
 {
   "name": "Palestrinha",
   "version": "1.0",
-  "description": "Silencia as mensagens daquela pessoa insuportável no google meet",
+  "description": "Silencia as mensagens daquela pessoa insuportável no google meets",
   "author": "Adoglio",
   "permissions": ["storage", "activeTab", "declarativeContent"],
   "background": {
@@ -11,10 +11,10 @@
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/get_started16.png",
-      "32": "images/get_started32.png",
-      "48": "images/get_started48.png",
-      "128": "images/get_started128.png"
+      "16": "images/palestrinha16.png",
+      "32": "images/palestrinha32.png",
+      "48": "images/palestrinha48.png",
+      "128": "images/palestrinha128.png"
     }
   },
   "content_scripts": [
@@ -24,10 +24,10 @@
     }
   ],
   "icons": {
-    "16": "images/get_started16.png",
-    "32": "images/get_started32.png",
-    "48": "images/get_started48.png",
-    "128": "images/get_started128.png"
+    "16": "images/palestrinha16.png",
+    "32": "images/palestrinha32.png",
+    "48": "images/palestrinha48.png",
+    "128": "images/palestrinha128.png"
   },
   "manifest_version": 2
 }
